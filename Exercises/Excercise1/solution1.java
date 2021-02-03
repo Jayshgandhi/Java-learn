@@ -15,7 +15,7 @@ public class Main {
         Scanner sc =new Scanner(System.in);
         int n = sc.nextInt();
         Double c=Convert(37.6);
-
+        //reset;
         System.out.println(c);
     }
 }
