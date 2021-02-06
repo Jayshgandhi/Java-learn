@@ -4,10 +4,7 @@ public class Main {
     public static Double Convert(double num)
     {
         double x= num*1.8 +  32;
-
         return x;
-
-
     }
 
     public static void main(String[] args) throws Exception {
