@@ -1,12 +1,8 @@
 import java.util.*;
-
-public class Main {
+public class solution1 {
     public static Double Convert(double num)
     {
-        double x= num*1.8 +  32;
-
-        return x;
-
+        return num*1.8 +  32;
 
     }
 
@@ -14,8 +10,10 @@ public class Main {
         System.out.println("Enter number");
         Scanner sc =new Scanner(System.in);
         int n = sc.nextInt();
-        Double c=Convert(37.6);
-        //reset;
-        System.out.println(c);
+        System.out.println(Convert(n));
     }
 }
+
+
+
+
