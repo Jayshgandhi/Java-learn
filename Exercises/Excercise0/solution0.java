@@ -4,7 +4,7 @@ public class exercise0 {
 
 
 
-    public static String odd(int num)
+    public static String odd_even(int num)
     {
 
         if(num % 2 == 0){
@@ -17,9 +17,10 @@ public class exercise0 {
         System.out.println("Enter number");
         Scanner sc =new Scanner(System.in);
         int n = sc.nextInt();
-        String c=odd(n);
 
-        System.out.println(c);
+
+        System.out.println(odd_even(n));
+
     }
 
 }
