@@ -1,9 +1,10 @@
 import java.util.*;
 public class solution1 {
-    public static Double Convert(double num)
+    public static Float Convert(int num)
     {
-        return num*1.8 +  32;
-
+        double f=   num*1.8 +  32;
+        float d = (float) f;
+        return d;
     }
 
     public static void main(String[] args) throws Exception {
