@@ -1,24 +1,26 @@
 import java.util.*;
 
-public class Main {
-    public static Integer Average(double[] num)
+public class solutions2 {
+    public static Integer Average(float[] num)
     {
-        int l=length.num[];
-        int sum=0;
+        float sum=0;
 
-
-        return x;
-
-
+        for (int i=0;i< num.length;i++){
+             sum = sum+ num[i];
+        }
+        int a = (int) (sum);
+        int avg;
+        avg= a/num.length;
+        return avg;
     }
 
     public static void main(String[] args) throws Exception {
         //System.out.println("Enter number");
         //Scanner sc =new Scanner(System.in);
         //int n = sc.nextInt();
-        double[]val=new double [](22.3,44.8,77.9,66.9,33.62);
-        Double c=Convert(val);
+        float[] val=new float[]{78.3f,44.9f,77.9f,66.9f,39.62f};
 
-        System.out.println(c);
+
+        System.out.println("average is:" +Average(val));
     }
 }
