@@ -2,9 +2,7 @@ import java.util.*;
 public class solution1 {
     public static Float Convert(int num)
     {
-        double f=   num*1.8 +  32;
-        float d = (float) f;
-        return d;
+        return  num*1.8f +  32;
     }
 
     public static void main(String[] args) throws Exception {
