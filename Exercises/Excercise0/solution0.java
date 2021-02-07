@@ -17,10 +17,7 @@ public class exercise0 {
         System.out.println("Enter number");
         Scanner sc =new Scanner(System.in);
         int n = sc.nextInt();
-
-
         System.out.println(odd_even(n));
-
     }
 
 }

@@ -1,21 +1,18 @@
 import java.util.*;
-
-public class Main {
-    public static Double Convert(double num)
+public class solution1 {
+    public static Float Convert(int num)
     {
-        double x= num*1.8 +  32;
-
-        return x;
-
-
+        return  num*1.8f +  32;
     }
 
     public static void main(String[] args) throws Exception {
         System.out.println("Enter number");
         Scanner sc =new Scanner(System.in);
         int n = sc.nextInt();
-        Double c=Convert(37.6);
-        //reset;
-        System.out.println(c);
+        System.out.println(Convert(n));
     }
 }
+
+
+
+
