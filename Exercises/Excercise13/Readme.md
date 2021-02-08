@@ -59,7 +59,9 @@ If N==5:<br>
 
 - Assistance to generate this sequence.
 - Create array of size N filled with first N prime numbers.
+- For generating prime numbers refer code from internet: Eg <a href = "https://beginnersbook.com/2014/01/java-program-to-display-first-n-or-first-100-prime-numbers/">sample code</a>
 - Fill the sequence with prime numbers corresponding indices of the array
 
 for example for the above the problem the array should be like this arr[5] = {2,3,5,7,11}
+
 
