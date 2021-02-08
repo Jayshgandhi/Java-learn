@@ -6,7 +6,7 @@ Welcome to OOP world of java..
 
 ## Problem definition:
 
-**Create a class called Arith and should have following methods with private access specifiers**
+**Create a class called Arith and should have following methods with public access specifiers**
 - Add to add two numbers
 - Sub to sub two numbers
 - mul to multiply two numbers
