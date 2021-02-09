@@ -2,7 +2,8 @@
 
 Java OOPS..
 
-Especially Inheritance
+- Especially Inheritance
+- Understand about toString function
 
 ## Some basic definitions in OOPS world:
 
