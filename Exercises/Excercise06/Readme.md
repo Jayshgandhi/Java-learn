@@ -19,6 +19,6 @@
 - return type {Array<Int>}
 
 ## Note
-Fill your number using random number generator function between range of 1 to 100 from random number generator package
+Fill the array or list using random number generator function between range of 1 to 100 from random number generator package
 
 
