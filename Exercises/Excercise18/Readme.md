@@ -26,7 +26,7 @@ Java OOPS..
 - Try to include different type of parameterized constructors for this problem.
 - int capacity - Determines the size of the array.
 - float growth_factor - how much size the new array should take.
-- float shrink_factor - when to shrink the size of the array.
+- float empty_factor - when to shrink the size of the array.
 - Use getters and setter functions to set and get values of parameter variables(capacity(int) , growth_factor(float), empty_factor(float)) apart from the constructor initialization.
 - int[] getArray() - return the array.
 - add(int) - add new value to the array.
