@@ -42,15 +42,16 @@ abstract class Arithmetics{
         }
         ComplexNumber complexMul(ComplexNumber c,ComplexNumber f){
             System.out.println();
-            System.out.println("Division result:");
-            return new ComplexNumber (super.mul(c.real,f.real),super.mul(c.imaginary, f.imaginary));
+            System.out.println("Multiplication result:");
+
+            return new ComplexNumber (super.mul(c.real,f.real)-super.mul(c.imaginary, f.imaginary),super.mul(c.imaginary,f.real)+super.mul(c.real,f.imaginary));
         }
         void display(ComplexNumber c){
             System.out.println(c.real+"  "+c.imaginary+"i");
         }
     }
 }
-public class solution14{
+public class exercise14{
     public static void main(String[] args) {
         Arithmetics.ComplexArith we = new Arithmetics.ComplexArith();
         ComplexNumber j= new ComplexNumber(15.8f,18.9f);
