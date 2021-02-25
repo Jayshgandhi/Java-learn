@@ -14,10 +14,13 @@ class Multiply{
                     k[i] = n[i] * y[i];
                 }
             }
-
+            //User defined exception
+            else{
+                throw new Exception("Size of the arrays are not equal");
+            }
         }
         catch(Exception e){
-            System.out.println("error");
+            System.out.println(e.getMessage());
         }
         return k;
     }
@@ -25,16 +28,20 @@ class Multiply{
         Integer p[][] = new Integer[n.length][y.length];
         try {
             if (n.length == y.length) {
-//Matrix multiplication using Hadamard product logic.
+                //Matrix multiplication using Hadamard product logic.
                 for (int i = 0; i < n.length; i++) {
                     for(int j=0;j<n.length;j++){
                         p[i][j] = n[i][j] * y[i][j];
                     }
                 }
             }
+            //User defined exception
+            else{
+                throw new Exception("Size of the arrays are not equal");
+            }
         }
         catch(Exception e){
-            System.out.println("Out of bound error");
+            System.out.println(e.getMessage());
         }
         return p;
 
@@ -66,12 +73,12 @@ class Multiply{
         System.out.println("]");
     }
 }
-public class exercise16 {
+public class solution16 {
     public static void main(String[] args) {
         Multiply m = new Multiply();
         Integer r=m.process(12,78);
-        Integer[]a = new Integer[]{23,67,89,45};
-        Integer[]b = new Integer[]{5,6,9,5};
+        Integer[]a = new Integer[]{23,67,89,11};
+        Integer[]b = new Integer[]{5,6,7,9};
         Integer[]g = m.process(a,b);
         Integer[][]v = new Integer[][]{{2,3,1},{4,7,2},{1,2,3}};
         Integer[][]j = new Integer[][]{{3,4,1},{5,6,2},{1,2,3}};
