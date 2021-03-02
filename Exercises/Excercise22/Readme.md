@@ -11,7 +11,7 @@ Java Streams:
 
 ## Problem definition:
 
-- Create a class called Student with two members student_name and student_mark.
+- Create a class called Student with two members student_name and student_mark and also use getter and setter methods to assign and retrive value.
 - Create a List of 100 students like List<Student>.
 - Assign randomized name for each student using exercise 19 and randomized mark for each student using random numbers between 1 to 100.
 - Create a class JavaStreamAdvancedWorker.
