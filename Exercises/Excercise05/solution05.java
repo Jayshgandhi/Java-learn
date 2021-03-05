@@ -13,9 +13,17 @@ public class solution05 {
         float f[] =new float[n];
         float m=1f;
         Random rd = new Random();
-        for (int i = 0; i < n; i++) {
+
+        for (int i = 0; i < n-1; i++) {
             f[i] = (float)(rd.nextInt((n - 1) + 1) + 1);
-            m = m*f[i];
+            System.out.print(+f[i]+" ,");
+
+        }
+        f[n-1] = (float)(rd.nextInt((n - 1) + 1) + 1);
+        System.out.print(f[n-1]);
+        System.out.println();
+        for (int i = 0; i < n; i++) {
+            m = m * f[i];
         }
         return m;
     }
