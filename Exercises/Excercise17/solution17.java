@@ -2,31 +2,38 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 interface Multiplication {
-    default Integer process(Integer n, Integer y) {
+    default Object process(Object n, Object y) {
         System.out.println("default");
-        return n*y;
+        return 0;
     }
-    void display(Integer n);
+    void display(Object n);
 }
 class Scalar_multiplication implements Multiplication {
-    public Integer process(Integer n, Integer y) {
-        return n * y;
+    public Object process(Object n, Object y) {
+        int h = (int)n;
+        int g= (int)y;
+        Object og = new Object();
+        og=h*g;
+        return og;
     }
 
-    @Override
-    public void display(Integer n) {
-        System.out.println("Scalar multiplication:\t["+n+"]");
+    public void display(Object n) {
+        int l = (int)n;
+        System.out.println("Scalar multiplication:\t["+l+"]");
     }
 
 }
 class Vector_multiplication extends Scalar_multiplication {
-    public Integer[] process(Integer[] n, Integer[] y) {
-        Integer k[] = new Integer[n.length];
+    public Object process(Object n, Object y) {
+        Integer[]h =(Integer[])n;
+        Integer[]f= (Integer[])y;
+        Integer []k = new Integer[h.length];
+        Object[] oi = new Object[h.length];
         try {
-            if (n.length == y.length) {
+            if (h.length == k.length) {
                 //Vector multiplication using Hadamard product logic.
-                for (int i = 0; i < n.length; i++) {
-                    k[i] = n[i] * y[i];
+                for (int i = 0; i < h.length; i++) {
+                    k[i] = h[i] * f[i];
                 }
             }
             //User defined exception
@@ -37,27 +44,32 @@ class Vector_multiplication extends Scalar_multiplication {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return k;
+        oi = k;
+        return oi;
     }
 
-    public void display(Integer[] n) {
+    public void display(Object n) {
+        Integer[] j=(Integer[])n;
 
         System.out.print("Vector multiplication:\t[");
-        for (int i = 0; i < n.length; i++) {
-            System.out.print(n[i] + " ");
+        for (int i = 0; i < j.length; i++) {
+            System.out.print(j[i] + " ");
         }
         System.out.print("]");
     }
 }
 class Matrix_multiplication extends Vector_multiplication{
-    public Integer[][] process(Integer[][]n, Integer[][]y) {
-        Integer p[][] = new Integer[n.length][y.length];
+    public Object process(Object n, Object y) {
+        Object ou = new Object();
+        Integer[][]h =(Integer[][])n;
+        Integer[][]f= (Integer[][])y;
+        Integer p[][] = new Integer[h.length][f.length];
         try {
-            if (n.length == y.length) {
+            if (h.length == f.length) {
 //Matrix multiplication using Hadamard product logic.
-                for (int i = 0; i < n.length; i++) {
-                    for (int j = 0; j < n.length; j++) {
-                        p[i][j] = n[i][j] * y[i][j];
+                for (int i = 0; i < h.length; i++) {
+                    for (int j = 0; j < f.length; j++) {
+                        p[i][j] = h[i][j] * f[i][j];
                     }
                 }
             }
@@ -68,15 +80,17 @@ class Matrix_multiplication extends Vector_multiplication{
         } catch (Exception e) {
             System.out.println("Out of bound error");
         }
-        return p;
+        ou = p;
+        return ou;
     }
-    public void display(Integer[][]n){
+    public void display(Object n){
+        Integer[][]p =(Integer[][])n;
         System.out.println("\nMatrix multiplication:");
         System.out.print("[");
-        for(int i=0;i<n.length;i++){
+        for(int i=0;i<p.length;i++){
             System.out.print("\t[");
-            for(int j=0;j<n.length;j++){
-                System.out.print(n[i][j]+"\t");
+            for(int j=0;j<p.length;j++){
+                System.out.print(p[i][j]+"\t");
             }
             System.out.print("]");
             System.out.println();
@@ -84,20 +98,28 @@ class Matrix_multiplication extends Vector_multiplication{
         System.out.println("]");
     }
 
-
 }
 public class solution17 {
     public static void main(String[] args) {
-        Matrix_multiplication o = new Matrix_multiplication();
-        Integer r=o.process(12,78);
-        Integer[]a = new Integer[]{12,6,8,4};
-        Integer[]b = new Integer[]{10,6,2,8};
-        Integer[]g = o.process(a,b);
-        Integer[][]v = new Integer[][]{{12,36,11},{14,37,52},{61,92,23}};
-        Integer[][]j = new Integer[][]{{3,4,1},{5,6,2},{1,2,3}};
-        Integer[][]h = o.process(v,j);
-        o.display(r);
-        o.display(g);
-        o.display(h);
+        Object obj1,obj2,obj3,obj4,obj5,obj6 = new Object();
+        Integer[] i1 = new Integer[]{2,6,9,5};
+        Integer[] i2 = new Integer[]{2,6,9,5};
+        Integer[][]v = new Integer[][]{{12,3,1},{4,7,2},{1,26,3}};
+        Integer[][]j = new Integer[][]{{3,3,1},{5,7,2},{11,2,3}};
+        obj1=16;
+        obj2=8;
+        obj3 = i1;
+        obj4 = i2;
+        obj5 =v;
+        obj6=j;
+        Vector_multiplication k = new Vector_multiplication();
+        Matrix_multiplication s = new Matrix_multiplication();
+        Scalar_multiplication o = new Scalar_multiplication();
+        Object gk=o.process(obj1,obj2);
+        Object kl= k.process(obj3,obj4);
+        Object fo=s.process(obj5,obj6);
+        o.display(gk);
+        k.display(kl);
+        s.display(fo);
     }
 }
