@@ -3,6 +3,7 @@
 Java Lambda expressions and Functional interface:
 - Understand Java Lambda expressions.
 - Understand Java Functional interface.
+- Understand Method references and its types in Java.  
 - Understand Functional programming paradigm.
 ## Some basic definitions in OOPS world:
 
