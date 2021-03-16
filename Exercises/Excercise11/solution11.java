@@ -1,9 +1,9 @@
 import java.util.Arrays;
 import java.util.Random;
-class Sample{
+class Sample1{
     int a[],count,m,diff,v;
 
-    public Sample(int []a,int n){
+    public Sample1(int []a,int n){
         this.a=a;
         this.count=n;
     }
@@ -59,7 +59,7 @@ public class solution11 {
             b[i] = rd.nextInt((1000 - 1) + 1) + 1;
         }
         int count=b.length;
-        Sample sp = new Sample(b,count);
+        Sample1 sp = new Sample1(b,count);
         System.out.println("mean is:"+ sp.mean());
         System.out.println("mode is:"+ sp.mode());
         System.out.println("variance is:"+ sp.variance());
