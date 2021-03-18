@@ -14,7 +14,7 @@ class Arith{
 class FractionArith extends Arith{
     public Fraction fraction_add(Fraction h, Fraction g){
 
-        return new Fraction(mul(h.numerator,g.denominator) + super.mul(h.denominator,g.numerator),super.mul(h.denominator,g.denominator));
+        return new Fraction(super.mul(h.numerator,g.denominator) + super.mul(h.denominator,g.numerator),super.mul(h.denominator,g.denominator));
 
     }
     public Fraction fraction_sub(Fraction x, Fraction y){
