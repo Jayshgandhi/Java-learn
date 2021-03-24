@@ -1,7 +1,24 @@
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.Random;
 
+class Name_generator {
+    public String name_Suggestor(int length) {
+        int[] a = new int[length];
+        String[] s = new String[length];
+        StringBuilder stringBuilder = new StringBuilder(length);
+        Random rd = new Random();
+
+        for (int i = 0; i < length; i++) {
+            a[i] = rd.nextInt((90 - 65) + 1) + 65;
+
+            s[i] = Character.toString((char) a[i]);
+            stringBuilder.append(s[i]);
+        }
+        return stringBuilder.toString();
+    }
+}
 class Student{
     String student_name;
     Integer student_mark;
@@ -55,9 +72,9 @@ class JavaStreamAdvanceWorker{
         Optional<Student> fr = r.stream().max((o1, o2) -> o1.student_mark.compareTo(o2.student_mark));
         return fr;
     }
-    public List<String> numberOfFailures(List<Student> d,Integer passMarkThreshold){
+    public Integer numberOfFailures(List<Student> d,Integer passMarkThreshold){
 
-        List<String> res = d.stream().filter(s ->s.student_mark<passMarkThreshold).map(v->v.getStudent_name()).collect(Collectors.toList());
+        Integer res = Math.toIntExact(d.stream().filter(s -> s.student_mark < passMarkThreshold).count());
         return res;
 
     }
@@ -93,10 +110,9 @@ public class solution22 {
 
         JavaStreamAdvanceWorker vj = new JavaStreamAdvanceWorker();
         List<String> end = vj.passMark(sd,55);
-        List<String> fail = vj.numberOfFailures(sd,55);
         System.out.println("Students who has passed:"+end.toString());
         System.out.println(vj.firstRankStudent(sd));
-        System.out.println("Students who has failed:"+fail.toString());
+        System.out.println("No of students failed:"+vj.numberOfFailures(sd,55));
         vj.printlastFiveStudents(sd);
         System.out.println(vj.checkAllPass(sd,55));
         System.out.println(vj.seperateStudents(sd,55));
