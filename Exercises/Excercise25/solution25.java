@@ -17,8 +17,8 @@ class CollectionExercise{
 
         return l;
     }
-    public Queue<Integer> insertValFIFO(Integer[]n){
-        Queue<Integer> q= new PriorityQueue<>();
+    public List<Integer> insertValFIFO(Integer[]n){
+        List<Integer> q = new ArrayList<Integer>();
         for (int i=0;i<10;i++){
             q.add(n[i]);
         }
@@ -81,12 +81,9 @@ public class solution25 {
         }
         System.out.print("]");
         System.out.println();
-        Queue<Integer> r = c.insertValFIFO(a);
-        System.out.print("Queue: [");
-        for (int i=0;i<10;i++) {
+        List<Integer> r = c.insertValFIFO(a);
+        System.out.print("List:"+r);
 
-            System.out.print( r.remove()+", ");
-        }
         System.out.print("]");
         System.out.println();
         System.out.println("Unique values HashSet: "+ c.insertValueUnique(a));
@@ -95,7 +92,7 @@ public class solution25 {
         System.out.println("Size of given array:"+a.length);
         System.out.println("Size of List:"+c.sizeDisplay(c.insertVal(a)));
         System.out.println("Size of Stack:"+c.sizeDisplay(c.insertValLIFO(a)));
-        System.out.println("Size of Queue:"+c.sizeDisplay(c.insertValFIFO(a)));
+        System.out.println("Size of List:"+c.sizeDisplay(c.insertValFIFO(a)));
         System.out.println("Size of hashset:"+c.sizeDisplay(c.insertValueUnique(a)));
         System.out.println("Size of LinkedHashset:"+c.sizeDisplay(c.insertValUniqueOrdered(a)));
         System.out.println("Size of TreeSet:"+c.sizeDisplay(c.insertValUniqueSorted(a)));
