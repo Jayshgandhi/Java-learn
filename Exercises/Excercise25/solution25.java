@@ -17,8 +17,8 @@ class CollectionExercise{
 
         return l;
     }
-    public List<Integer> insertValFIFO(Integer[]n){
-        List<Integer> q = new ArrayList<Integer>();
+    public Queue<Integer> insertValFIFO(Integer[]n){
+        Queue<Integer> q = new LinkedList<>();
         for (int i=0;i<10;i++){
             q.add(n[i]);
         }
@@ -81,7 +81,7 @@ public class solution25 {
         }
         System.out.print("]");
         System.out.println();
-        List<Integer> r = c.insertValFIFO(a);
+        Queue<Integer> r = c.insertValFIFO(a);
         System.out.print("List:"+r);
 
         System.out.print("]");
