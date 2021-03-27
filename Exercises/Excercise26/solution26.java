@@ -1,5 +1,22 @@
 import java.util.*;
+import java.util.stream.Collectors;
+class Name_generator {
+    public String name_Suggestor(int length) {
+        int[] a = new int[length];
+        String[] s = new String[length];
+        StringBuilder stringBuilder = new StringBuilder(length);
+        Random rd = new Random();
 
+        for (int i = 0; i < length; i++) {
+            a[i] = rd.nextInt((90 - 65) + 1) + 65;
+
+            s[i] = Character.toString((char) a[i]);
+            stringBuilder.append(s[i]);
+        }
+        //System.out.println("Name:");
+        return stringBuilder.toString();
+    }
+}
 class Employee implements Comparable<Employee>{
     private int Salary;
     private String EmployeeName;
@@ -60,6 +77,7 @@ public class solution26 {
     public static void main(String[] args) {
         List<Employee> e = new ArrayList<>();
         NameLengthSort nm = new NameLengthSort();
+
         Random rd = new Random();
         Name_generator ex = new Name_generator();
 
@@ -69,14 +87,16 @@ public class solution26 {
 
         }
         System.out.println("Given list:"+e);
-        Collections.sort(e,new NameLengthSort());
-        System.out.println("Sorted based on employee name:"+e);
+        List<Employee> ey = e.stream().sorted().collect(Collectors.toList());
+        System.out.println("Sorted based on salary:");
+        ey.forEach(System.out::println);
+        System.out.println();
 
-        Collections.sort(e);
-        System.out.println("Sorted based on salary");
+        Collections.sort(e,new NameLengthSort());
+        System.out.println("Sorted based on employee name:");
+
         e.forEach(System.out::println);
 
 
     }
 }
-
