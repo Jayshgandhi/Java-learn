@@ -1,24 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.util.Random;
 
-class Name_generator {
-    public String name_Suggestor(int length) {
-        int[] a = new int[length];
-        String[] s = new String[length];
-        StringBuilder stringBuilder = new StringBuilder(length);
-        Random rd = new Random();
-
-        for (int i = 0; i < length; i++) {
-            a[i] = rd.nextInt((90 - 65) + 1) + 65;
-
-            s[i] = Character.toString((char) a[i]);
-            stringBuilder.append(s[i]);
-        }
-        return stringBuilder.toString();
-    }
-}
 class Student{
     String student_name;
     Integer student_mark;
@@ -79,8 +62,10 @@ class JavaStreamAdvanceWorker{
 
     }
     public void printlastFiveStudents(List<Student> s){
-        List<Student> gt =s.subList(Math.max(s.size()-5,0), s.size());
-        System.out.println("Last five elements"+gt.toString());
+        int count= (int) s.stream().count();
+        List<Student> t = s.stream().skip(count-5).collect(Collectors.toList());
+        System.out.println("Last 5 students:"+t);
+
     }
     public boolean checkAllPass(List<Student> d,Integer passMarkThreshold){
 
@@ -110,11 +95,12 @@ public class solution22 {
 
         JavaStreamAdvanceWorker vj = new JavaStreamAdvanceWorker();
         List<String> end = vj.passMark(sd,55);
+
         System.out.println("Students who has passed:"+end.toString());
         System.out.println(vj.firstRankStudent(sd));
         System.out.println("No of students failed:"+vj.numberOfFailures(sd,55));
         vj.printlastFiveStudents(sd);
         System.out.println(vj.checkAllPass(sd,55));
-        System.out.println(vj.seperateStudents(sd,55));
+        System.out.println("Separate students:"+vj.seperateStudents(sd,55));
     }
 }
